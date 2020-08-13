@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+    <h1>This is a Tiny IMDB homepage</h1>
+<div class="movies">
+    {% for movie in movies %}
+    <div class="movie">
+        <h2><a href="{% url 'detail' slug=movie.slug %}">{{movie.title}}</a> </h2>
+        <p>{{movie.script}}</p>
+        <p>{{movie.year}}</p>
+        <p>{{movie.director}}</p>
+        <p>{{movie.actors}}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
